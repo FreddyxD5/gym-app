@@ -29,8 +29,9 @@ module.exports = StyleSheet.create({
         marginHorizontal: 50
     },
     AuthInput:{
-        marginBottom: 10,
-        backgroundColor: "transparent"
+        marginBottom: 10,        
+        borderCurve: 'round',
+        backgroundColor: "transparent",
     },        
     AuthButton:{
         marginTop: 15,
@@ -42,6 +43,13 @@ module.exports = StyleSheet.create({
         marginVertical:10,
         alignSelf:'flex-end',
         marginHorizontal:4
+    },
+    PageLogo:{
+        width: '100%',
+        height: screenHeight/10,
+        maxHeight: '100%',
+        marginTop:70,
+        marginBottom: 50,
     },
         
 })

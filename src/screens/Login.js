@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { SafeAreaView, View, Text, TouchableOpacity } from "react-native";
+import { SafeAreaView, View, Text, TouchableOpacity, Image } from "react-native";
 import Styles from '../config/Styles';
 import { TextInput,Button } from "react-native-paper";
 
@@ -14,7 +14,7 @@ const Login = (props) => {
     }
 
     const Login = ()=>{
-        return (console.log('siuu'))
+        return (console.log('siuu' + email+'/'+password))
     }
 
     return (
@@ -24,7 +24,7 @@ const Login = (props) => {
                 resizeMode={"contain"}
                 style={Styles.AuthLogo}/>
             <View style={Styles.AuthContent}>
-                <TextInput label={"Email"} onChangeText={text=>setEmail(text.trim())} mode="flat"/>
+                <TextInput label={"Email"} onChangeText={text=>setEmail(text.trim())} mode="flat" style={Styles.AuthInput}/>
                 <TextInput label={"password"} onChangeText={text=>setPassword(text.trim())} mode="flat" secureTextEntry={true} style={Styles.AuthInput}/>
                 <TouchableOpacity activeOpacity={0.9} onPress={()=>onChangeScreen('forgot')}>
                     <Text style={Styles.ForgotPass}>Olvidaste tu contraseña ?</Text>
@@ -34,7 +34,18 @@ const Login = (props) => {
                     onPress={()=>Login()}
                     dark={'dark'}>
                         Iniciar session 
-                    </Button>
+                </Button>
+                <View style={{ marginTop:20}}>
+                    <TouchableOpacity activeOpacity={0.9} onPress={()=>onChangeScreen('register')}>
+                        <Text style={{fontSize:16}}>
+                            Aun no tienes una cuenta? 
+                            <Text style={{fontWeight:'bold'}}> Registrate</Text>
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+                <TouchableOpacity activeOpacity={0.9} onPress={()=>onChangeScreen('about')}>
+                    <Text style={Styles.ForgotPass}>Acerca de nosotros</Text>
+                </TouchableOpacity>
             </View>       
         </SafeAreaView>
     )

@@ -13,10 +13,12 @@ export default function App() {
   const [loaded, setLoaded] = useState(false)
   const [language, setLanguage] = useState("")
   return (
-    <NavigationContainer>
-      {/* Pantallas */}
-      <GuestNavigation />
-    </NavigationContainer>
+    <PaperProvider >
+      <NavigationContainer>
+        {/* Pantallas */}
+        <GuestNavigation />
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
 

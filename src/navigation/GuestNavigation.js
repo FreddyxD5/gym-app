@@ -11,6 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import Login from "../screens/Login";
 import Register from "../screens/Register";
 import ForgotPass from "../screens/ForgotPass";
+import About from "../screens/About";
 
 const RootStack = createNativeStackNavigator();
 
@@ -50,10 +51,11 @@ export default function GuestNavigation(props){
     }
 
     return (
-        <RootStack.Navigator>
-            <RootStack.Screen name='login' component={Login} options={{title:'Login', headerTransparent:true}}/>
-            <RootStack.Screen name='register' component={Register} options={{title:'Register', headerTransparent:true, headerLeft: ()=>buttonBack()}}/>
+        <RootStack.Navigator>            
+            <RootStack.Screen name='login' component={Login} options={{title:'Iniciar Sesion', headerTransparent:true}}/>
+            <RootStack.Screen name='register' component={Register} options={{title:'Register', headerTransparent:true, headerLeft: ()=>buttonBack()}}/>            
             <RootStack.Screen name='forgot' component={ForgotPass} options={{title:'Forgot Password', headerTransparent:true}}/>
+            <RootStack.Screen name='about' component={About} options={{title:'About us', headerTransparent:false}}/>
             
         </RootStack.Navigator>
     )

@@ -10,6 +10,12 @@ const PrimaryColor = ColorsApp.PRIMARY;
 
 module.exports = StyleSheet.create({
     //Login/Signup styles
+    AuthLogo:{
+        width:'100%',
+        height:screenHeight/9,
+        maxHeight:'100%',
+        marginBottom:50
+    },
     AuthTitle:{
         width: '100%',
         maxHeight: '100%',

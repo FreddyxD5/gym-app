@@ -19,6 +19,10 @@ const Login = (props) => {
 
     return (
         <SafeAreaView style={{flex:1, justifyContent:'center'}}>
+            <Image 
+                source={require('../../assets/gym.png')}
+                resizeMode={"contain"}
+                style={Styles.AuthLogo}/>
             <View style={Styles.AuthContent}>
                 <TextInput label={"Email"} onChangeText={text=>setEmail(text.trim())} mode="flat"/>
                 <TextInput label={"password"} onChangeText={text=>setPassword(text.trim())} mode="flat" secureTextEntry={true} style={Styles.AuthInput}/>

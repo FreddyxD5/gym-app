@@ -49,15 +49,7 @@ const Login = (props) => {
                         </Text>
                     </TouchableOpacity>
                 </View>                                 
-            </View>  
-            <View style={{width:'100%',flexDirection:'row', height:50, backgroundColor: '#b4b4b4',alignItems:'center', justifyContent:'space-around', position:'absolute',bottom:0}}>
-                    <TouchableOpacity activeOpacity={0.9} onPress={()=>onChangeScreen('about')}>
-                            <Text style={Styles.TermsCond}>Acerca de nosotros</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.9} onPress={()=>onChangeScreen('terms')}>
-                        <Text style={Styles.TermsCond}>Terminos y condiciones</Text>
-                    </TouchableOpacity>
-            </View>                
+            </View>                      
         </SafeAreaView>
     )
 }

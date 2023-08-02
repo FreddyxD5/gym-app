@@ -39,10 +39,9 @@ module.exports = StyleSheet.create({
         elevation: 0
     },
     ForgotPass:{
-        fontSize:16,
-        marginVertical:10,
-        alignSelf:'flex-end',
-        marginHorizontal:4
+        fontSize:14,     
+        marginHorizontal:5,
+        marginVertical:10,   
     },
     PageLogo:{
         width: '100%',
@@ -51,5 +50,8 @@ module.exports = StyleSheet.create({
         marginTop:70,
         marginBottom: 50,
     },
+    TermsCond:{           
+        fontSize:14,        
+    }
         
 })

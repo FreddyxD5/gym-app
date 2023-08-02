@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { SafeAreaView, View, Text, TouchableOpacity, Image } from "react-native";
+import { SafeAreaView,ToastAndroid, View, Text, TouchableOpacity, Image, Alert } from "react-native";
 import Styles from '../config/Styles';
 import { TextInput,Button } from "react-native-paper";
 
@@ -14,7 +14,12 @@ const Login = (props) => {
     }
 
     const Login = ()=>{
-        return (console.log('siuu' + email+'/'+password))
+        if (email !== undefined && email.length>0 && password !== undefined && password.length>0 ){
+            return (console.log('siuu' + email+'/'+password))
+        }else{
+            return (ToastAndroid.show('Por favor rellene los campos', ToastAndroid.SHORT))
+        }
+            
     }
 
     return (
@@ -32,21 +37,27 @@ const Login = (props) => {
                 <Button 
                     mode="contained"
                     onPress={()=>Login()}
-                    dark={'dark'}>
-                        Iniciar session 
+                    dark={true}
+                    buttonColor='#0f6ebb'>
+                        Iniciar session
                 </Button>
-                <View style={{ marginTop:20}}>
+                <View style={{ marginTop:20, justifyContent:'center'}}>
                     <TouchableOpacity activeOpacity={0.9} onPress={()=>onChangeScreen('register')}>
-                        <Text style={{fontSize:16}}>
+                        <Text style={{fontSize:14}}>
                             Aun no tienes una cuenta? 
                             <Text style={{fontWeight:'bold'}}> Registrate</Text>
                         </Text>
                     </TouchableOpacity>
-                </View>
-                <TouchableOpacity activeOpacity={0.9} onPress={()=>onChangeScreen('about')}>
-                    <Text style={Styles.ForgotPass}>Acerca de nosotros</Text>
-                </TouchableOpacity>
-            </View>       
+                </View>                                 
+            </View>  
+            <View style={{width:'100%',flexDirection:'row', height:50, backgroundColor: '#b4b4b4',alignItems:'center', justifyContent:'space-around', position:'absolute',bottom:0}}>
+                    <TouchableOpacity activeOpacity={0.9} onPress={()=>onChangeScreen('about')}>
+                            <Text style={Styles.TermsCond}>Acerca de nosotros</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity activeOpacity={0.9} onPress={()=>onChangeScreen('terms')}>
+                        <Text style={Styles.TermsCond}>Terminos y condiciones</Text>
+                    </TouchableOpacity>
+            </View>                
         </SafeAreaView>
     )
 }
